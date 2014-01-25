@@ -53,7 +53,8 @@ tokens = (
 			'TUPLE',
 			'TYPEFUNC',
 			'SIZEFUNC',
-			'PROGPARAMETER'
+			'PROGPARAMETER',
+			'COMMENT'
 )
 t_ignore = ' \t\v\r'
 
@@ -191,9 +192,9 @@ def t_error(t):
 	t.lexer.skip(1)
 
 t_ID = r'[a-zA-Z][a-zA-Z_]*'
-
+t_COMMENT = r'.+'
 prog = "!=,; 89 09 57 0. 1. 9.78 \"Hello My Name is \"() hello chester for # /* */  \n boolean && else false true || open int string float"
-prog = "tuple type size list append dict while import <codegeneration> </codegeneration> _length _function_set"
+prog = "tuple type size list append dict while import <codegeneration> </codegeneration> _length _function_set kdfad-fasdf"
 akashalexer = lex.lex()
 akashalexer.input(prog)
 while True:
